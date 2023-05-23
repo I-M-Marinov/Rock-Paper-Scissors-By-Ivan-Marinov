@@ -13,27 +13,28 @@ namespace RockPaperScissors
 
             while (true)
             {
+               
+                    Console.Write("Choose [r]ock, [p]aper or [s]cissors: ");
+                    string playerMove = Console.ReadLine();
 
-                Console.Write("Choose [r]ock, [p]aper or [s]cissors: ");
-                string playerMove = Console.ReadLine();
+                    if (playerMove == "r" || playerMove == "rock")
+                    {
+                        playerMove = Rock;
+                    }
+                    else if (playerMove == "p" || playerMove == "Paper")
+                    {
+                        playerMove = Paper;
+                    }
+                    else if (playerMove == "s" || playerMove == "Scissors")
+                    {
+                        playerMove = Scissors;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Input. Try Again..."); 
+                        continue;
+                    }
 
-                if (playerMove == "r" || playerMove == "rock")
-                {
-                    playerMove = Rock;
-                }
-                else if (playerMove == "p" || playerMove == "Paper")
-                {
-                    playerMove = Paper;
-                }
-                else if (playerMove == "s" || playerMove == "Scissors")
-                {
-                    playerMove = Scissors;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Input. Try Again...");
-                    return;
-                }
 
                 Random random = new Random();
                 int computerRandomNumber = random.Next(1, 4);
